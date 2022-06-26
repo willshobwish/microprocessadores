@@ -19,7 +19,7 @@ begin
   RequireDerivedFormResource:=True;
   Application.Scaled:=True;
   Application.Initialize;
-  Application.CreateForm(TCalculadora, Calculadora);
+  Application.CreateForm(TCalculator, Calculator);
   Application.Run;
 end.
 
