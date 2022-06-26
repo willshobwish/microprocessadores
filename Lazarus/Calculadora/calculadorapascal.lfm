@@ -1,0 +1,345 @@
+object Calculator: TCalculator
+  Left = -630
+  Height = 444
+  Top = 279
+  Width = 496
+  Caption = 'Calculator'
+  ClientHeight = 444
+  ClientWidth = 496
+  LCLVersion = '2.2.0.4'
+  object C: TButton
+    Left = 400
+    Height = 50
+    Top = 80
+    Width = 50
+    Caption = 'C'
+    OnClick = CClick
+    TabOrder = 0
+  end
+  object division: TButton
+    Left = 288
+    Height = 50
+    Top = 192
+    Width = 50
+    Caption = '/'
+    TabOrder = 1
+  end
+  object multiplication: TButton
+    Left = 288
+    Height = 50
+    Top = 248
+    Width = 50
+    Caption = '*'
+    TabOrder = 2
+  end
+  object minus: TButton
+    Left = 288
+    Height = 50
+    Top = 304
+    Width = 50
+    Caption = '-'
+    TabOrder = 3
+  end
+  object plus: TButton
+    Left = 288
+    Height = 50
+    Top = 360
+    Width = 50
+    Caption = '+'
+    TabOrder = 4
+  end
+  object nine: TButton
+    Left = 232
+    Height = 50
+    Top = 192
+    Width = 50
+    Caption = '9'
+    TabOrder = 5
+  end
+  object six: TButton
+    Left = 232
+    Height = 50
+    Top = 248
+    Width = 50
+    Caption = '6'
+    TabOrder = 6
+  end
+  object three: TButton
+    Left = 232
+    Height = 50
+    Top = 304
+    Width = 50
+    Caption = '3'
+    OnClick = threeClick
+    TabOrder = 7
+  end
+  object equal: TButton
+    Left = 344
+    Height = 50
+    Top = 360
+    Width = 50
+    Caption = '='
+    TabOrder = 8
+  end
+  object Button11: TButton
+    Left = 232
+    Height = 50
+    Top = 80
+    Width = 106
+    Caption = 'Backspace'
+    TabOrder = 9
+  end
+  object eight: TButton
+    Left = 176
+    Height = 50
+    Top = 192
+    Width = 50
+    Caption = '8'
+    TabOrder = 10
+  end
+  object five: TButton
+    Left = 176
+    Height = 50
+    Top = 248
+    Width = 50
+    Caption = '5'
+    TabOrder = 11
+  end
+  object two: TButton
+    Left = 176
+    Height = 50
+    Top = 304
+    Width = 50
+    Caption = '2'
+    TabOrder = 12
+  end
+  object point: TButton
+    Left = 232
+    Height = 50
+    Top = 360
+    Width = 50
+    Caption = '.'
+    TabOrder = 13
+  end
+  object seven: TButton
+    Left = 120
+    Height = 50
+    Top = 192
+    Width = 50
+    Caption = '7'
+    TabOrder = 14
+  end
+  object four: TButton
+    Left = 120
+    Height = 50
+    Top = 248
+    Width = 50
+    Caption = '4'
+    TabOrder = 15
+  end
+  object one: TButton
+    Left = 120
+    Height = 50
+    Top = 304
+    Width = 50
+    Caption = '1'
+    TabOrder = 16
+  end
+  object zero: TButton
+    Left = 120
+    Height = 50
+    Top = 360
+    Width = 50
+    Caption = '0'
+    TabOrder = 17
+  end
+  object visor: TEdit
+    Left = 64
+    Height = 23
+    Top = 24
+    Width = 384
+    TabOrder = 18
+    Text = '0'
+  end
+  object degree: TRadioButton
+    Left = 120
+    Height = 19
+    Top = 56
+    Width = 57
+    Caption = 'Degree'
+    Checked = True
+    TabOrder = 40
+    TabStop = True
+  end
+  object radian: TRadioButton
+    Left = 184
+    Height = 19
+    Top = 56
+    Width = 56
+    Caption = 'Radian'
+    TabOrder = 19
+  end
+  object Button21: TButton
+    Left = 344
+    Height = 50
+    Top = 80
+    Width = 50
+    Caption = 'CE'
+    OnClick = Button21Click
+    TabOrder = 20
+  end
+  object ysqrtx: TButton
+    Left = 344
+    Height = 50
+    Top = 304
+    Width = 50
+    Caption = 'ysqrtx'
+    TabOrder = 21
+  end
+  object tan: TButton
+    Left = 344
+    Height = 50
+    Top = 248
+    Width = 50
+    Caption = 'tan'
+    TabOrder = 22
+  end
+  object cos: TButton
+    Left = 344
+    Height = 50
+    Top = 192
+    Width = 50
+    Caption = 'cos'
+    TabOrder = 23
+  end
+  object sqrtx: TButton
+    Left = 400
+    Height = 50
+    Top = 304
+    Width = 50
+    Caption = '√x'
+    TabOrder = 24
+  end
+  object x2: TButton
+    Left = 400
+    Height = 50
+    Top = 248
+    Width = 50
+    Caption = 'x²'
+    TabOrder = 25
+  end
+  object xy: TButton
+    Left = 400
+    Height = 50
+    Top = 192
+    Width = 50
+    Caption = 'x^y'
+    TabOrder = 26
+  end
+  object ex: TButton
+    Left = 400
+    Height = 50
+    Top = 136
+    Width = 50
+    Caption = 'e^x'
+    TabOrder = 27
+  end
+  object sin: TButton
+    Left = 344
+    Height = 50
+    Top = 136
+    Width = 50
+    Caption = 'sin'
+    TabOrder = 28
+  end
+  object onex: TButton
+    Left = 288
+    Height = 50
+    Top = 136
+    Width = 50
+    Caption = '1/x'
+    TabOrder = 29
+  end
+  object factorial: TButton
+    Left = 232
+    Height = 50
+    Top = 136
+    Width = 50
+    Caption = 'n!'
+    TabOrder = 30
+  end
+  object Button32: TButton
+    Left = 176
+    Height = 50
+    Top = 136
+    Width = 50
+    Caption = 'log'
+    TabOrder = 31
+  end
+  object Button33: TButton
+    Left = 120
+    Height = 50
+    Top = 136
+    Width = 50
+    Caption = 'ln'
+    TabOrder = 32
+  end
+  object inv: TCheckBox
+    Left = 64
+    Height = 19
+    Top = 56
+    Width = 36
+    Caption = 'Inv'
+    OnChange = invChange
+    TabOrder = 33
+  end
+  object plusminus: TButton
+    Left = 176
+    Height = 50
+    Top = 360
+    Width = 50
+    Caption = '+/-'
+    TabOrder = 34
+  end
+  object memoryrestore: TButton
+    Left = 64
+    Height = 50
+    Top = 192
+    Width = 50
+    Caption = 'MR'
+    TabOrder = 35
+  end
+  object memorystore: TButton
+    Left = 64
+    Height = 50
+    Top = 248
+    Width = 50
+    Caption = 'MS'
+    TabOrder = 36
+  end
+  object memoryplus: TButton
+    Left = 64
+    Height = 50
+    Top = 304
+    Width = 50
+    Caption = 'M+'
+    TabOrder = 37
+  end
+  object pi: TButton
+    Left = 64
+    Height = 50
+    Top = 360
+    Width = 50
+    Caption = 'π'
+    OnClick = piClick
+    TabOrder = 38
+  end
+  object memoryclear: TButton
+    Left = 64
+    Height = 50
+    Top = 136
+    Width = 50
+    Caption = 'MC'
+    TabOrder = 39
+  end
+end
