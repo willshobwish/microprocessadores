@@ -47,31 +47,31 @@ begin
 end;
 
 procedure TForm1.CalcularClick(Sender: TObject);
-var x,y,z,temp,debug:Integer;
+var w,x,y,z,temp,debug:Real;
 begin
-  x:= strtoint(aeq.Text);
-  y:= strtoint(beq.Text);
-  z:= strtoint(ceq.Text);
+  w:= 4;
+  x:= strtofloat(aeq.Text);
+  y:= strtofloat(beq.Text);
+  z:= strtofloat(ceq.Text);
+
   {$asmmode intel}
   asm
-  mov eax, y
-  imul y
-  mov temp, eax
-  mov eax, 4
-  imul x
-  imul z
-  mov ebx, temp
-  sub ebx, eax
-  mov temp, ebx
-  mov debug, ebx
-  finit
-  fld temp
-  fsqrt
-  fstp temp
-
+    finit
+    fld x
+    fld z
+    fld w
+    fmul
+    fmul
+    fld y
+    fld y
+    fmul
+    fxch
+    fsub
+    fstp temp
   end;
-  raiz1eq.Text:= inttostr(temp);
-  raiz2eq.Text:= inttostr(debug);
+
+  raiz1eq.Text:= floattostr(temp);
+  raiz2eq.Text:= floattostr(debug);
 end;
 
 procedure TForm1.AClick(Sender: TObject);
