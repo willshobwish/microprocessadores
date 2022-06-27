@@ -23,9 +23,9 @@ type
     C: TLabel;
     Raiz_1: TLabel;
     Raiz_2: TLabel;
-    procedure CalcularClick (Sender: TObject);
-    procedure FormCreate (Sender: TObject);
-    procedure AClick (Sender: TObject);
+    procedure CalcularClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure AClick(Sender: TObject);
   private
 
   public
@@ -33,7 +33,7 @@ type
   end;
 
 var
-  Form1 : TForm1;
+  Form1: TForm1;
 
 implementation
 
@@ -41,13 +41,14 @@ implementation
 
 { TForm1 }
 
-procedure TForm1.FormCreate (Sender: TObject);
+procedure TForm1.FormCreate(Sender: TObject);
 begin
 
 end;
 
-procedure TForm1.CalcularClick (Sender: TObject);
-var v, w, x, y, z, temp, resultado1, resultado2, resultado3 : Real;
+procedure TForm1.CalcularClick(Sender: TObject);
+var
+  v, w, x, y, z, temp, resultado1, resultado2, resultado3: real;
 begin
   v := 2;
   w := 4;
@@ -57,58 +58,79 @@ begin
 
   {$ASMMODE intel}
   asm
-    finit
-    fld x
-    fld z
-    fld w
-    fmul st,st(1)
-    fmul st,st(2)
-    fld y
-    fld y
-    fmul st,st(1)
-    fsub st,st(2)
-    fsqrt
-    fstp temp
-    fld v
-    fld x
-    fmul
-    fld temp
-    fld y
-    fldz
-    fsubr
-    fadd
-    fdiv
-    fstp resultado1
+           FINIT
+           FLD     z
+           FLD     x
+           FLD     w
+           FMUL
+           FMUL
+           FLD     y
+           FLD     y
+           FMUL
+           FSUBR
+           FSTP    temp;
   end;
-  asm
-    finit
-    fld x
-    fld z
-    fld w
-    fmul st,st(1)
-    fmul st,st(2)
-    fld y
-    fld y
-    fmul st,st(1)
-    fsub st,st(2)
-    fsqrt
-    fstp temp
-    fld v
-    fld x
-    fmul
-    fld temp
-    fld y
-    fldz
-    fsubr
-    fsubr
-    fdivr
-    fstp resultado2
+  if temp > 0 then
+  begin
+    asm
+             FINIT
+             FLD     v
+             FLD     x
+             FMUL
+             FLD     temp
+             FSQRT
+             FLD     y
+             FLDZ
+             FSUBR
+             FSUBR
+             FDIVR
+             FSTP    resultado1
+    end;
+    asm
+             FINIT
+             FLD     v
+             FLD     x
+             FMUL
+             FLD     temp
+             FSQRT
+             FLD     y
+             FLDZ
+             FSUBR
+             FADD
+             FDIVR
+             FSTP    resultado2
+    end;
+    raiz1eq.Text := floattostr(resultado1);
+    raiz2eq.Text := floattostr(resultado2);
   end;
-  raiz1eq.Text := floattostr(resultado1);
-  raiz2eq.Text := floattostr(resultado2);
+  if temp = 0 then
+  begin
+    asm
+             FINIT
+             FLD     v
+             FLD     x
+             FMUL
+             //FLD     temp
+             //FSQRT
+             FLD     y
+             FLDZ
+             FSUBR
+             //FADD
+             FDIVR
+             FSTP    resultado1
+    end;
+    raiz1eq.Text := floattostr(resultado1);
+    raiz2eq.Text := 'Delta igual a zero, duas raizes iguais';
+  end;
+  if temp < 0 then
+  begin
+    raiz1eq.Text := 'Nao existe raizes negativos';
+    raiz2eq.Text := 'Nao existe raizes negativos';
+  end;
+
 end;
 
-procedure TForm1.AClick (Sender: TObject);
+procedure TForm1.AClick(Sender: TObject);
 begin
 
 end;
