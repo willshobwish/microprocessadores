@@ -47,7 +47,7 @@ begin
 end;
 
 procedure TForm1.CalcularClick (Sender: TObject);
-var v, w, x, y, z, temp, resultado1, resultado2, resultado3 : Real;
+var v, w, x, y, z, temp, resultado1, resultado2 : Real;
 begin
   v := 2;
   w := 4;
