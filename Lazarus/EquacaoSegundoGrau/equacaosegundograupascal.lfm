@@ -1,13 +1,13 @@
 object Form1: TForm1
-  Left = -534
+  Left = -438
   Height = 240
-  Top = 301
+  Top = 171
   Width = 320
   Caption = 'Form1'
   ClientHeight = 240
   ClientWidth = 320
   OnCreate = FormCreate
-  LCLVersion = '2.2.0.4'
+  LCLVersion = '2.2.2.0'
   object Calcular: TButton
     Left = 216
     Height = 25
@@ -63,6 +63,7 @@ object Form1: TForm1
     Top = 32
     Width = 8
     Caption = 'A'
+    ParentColor = False
     OnClick = AClick
   end
   object B: TLabel
@@ -71,6 +72,7 @@ object Form1: TForm1
     Top = 72
     Width = 7
     Caption = 'B'
+    ParentColor = False
   end
   object C: TLabel
     Left = 88
@@ -78,6 +80,7 @@ object Form1: TForm1
     Top = 100
     Width = 8
     Caption = 'C'
+    ParentColor = False
   end
   object Raiz_1: TLabel
     Left = 88
@@ -85,6 +88,7 @@ object Form1: TForm1
     Top = 128
     Width = 32
     Caption = 'Raiz_1'
+    ParentColor = False
   end
   object Raiz_2: TLabel
     Left = 88
@@ -92,5 +96,6 @@ object Form1: TForm1
     Top = 156
     Width = 32
     Caption = 'Raiz_2'
+    ParentColor = False
   end
 end

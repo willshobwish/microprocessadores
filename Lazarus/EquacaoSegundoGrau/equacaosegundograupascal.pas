@@ -100,8 +100,8 @@ begin
     fld y
     fldz
     fsubr
-    fsub
-    fdiv
+    fsubr
+    fdivr
     fstp resultado2
   end;
     raiz1eq.Text:= floattostr(resultado1);
