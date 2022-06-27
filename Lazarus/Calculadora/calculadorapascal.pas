@@ -56,12 +56,13 @@ type
     procedure Button21Click(Sender: TObject);
     procedure CClick(Sender: TObject);
     procedure piClick(Sender: TObject);
+    procedure plusClick(Sender: TObject);
     procedure threeClick(Sender: TObject);
     procedure invChange(Sender: TObject);
   private
 
   public
-
+var memory:Real;
   end;
 
 var
@@ -93,8 +94,13 @@ begin
   fldpi
   fstp temp
   end;
-visor.Text:= FloatToStr(temp);
+  visor.Text:= FloatToStr(temp);
+  memory:=StrToFloat(visor.Text);
 
+end;
+
+procedure TCalculator.plusClick(Sender: TObject);
+begin
 
 end;
 

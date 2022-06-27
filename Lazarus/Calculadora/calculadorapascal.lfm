@@ -1,7 +1,7 @@
 object Calculator: TCalculator
-  Left = 610
+  Left = 1041
   Height = 444
-  Top = 240
+  Top = 271
   Width = 496
   Caption = 'Calculator'
   ClientHeight = 444
@@ -46,6 +46,7 @@ object Calculator: TCalculator
     Top = 360
     Width = 50
     Caption = '+'
+    OnClick = plusClick
     TabOrder = 4
   end
   object nine: TButton
@@ -193,7 +194,7 @@ object Calculator: TCalculator
     Height = 50
     Top = 304
     Width = 50
-    Caption = 'ysqrtx'
+    Caption = 'ʸ√x'
     TabOrder = 21
   end
   object tan: TButton
@@ -233,7 +234,7 @@ object Calculator: TCalculator
     Height = 50
     Top = 192
     Width = 50
-    Caption = 'x^y'
+    Caption = 'xʸ'
     TabOrder = 26
   end
   object ex: TButton
@@ -241,7 +242,7 @@ object Calculator: TCalculator
     Height = 50
     Top = 136
     Width = 50
-    Caption = 'e^x'
+    Caption = 'eˣ'
     TabOrder = 27
   end
   object sin: TButton
