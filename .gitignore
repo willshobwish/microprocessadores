@@ -17,6 +17,10 @@ DOSZIP/
 FREEDOS/
 TP7/
 Zaxxon.com
+GPATH
+GRTAGS
+GTAGS 
+GTEMP.pas
 
 # Lazarus compiler-generated binaries (safe to delete)
 *.exe
