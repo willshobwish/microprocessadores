@@ -6,7 +6,7 @@ object Calculator: TCalculator
   Caption = 'Calculator'
   ClientHeight = 444
   ClientWidth = 496
-  LCLVersion = '2.2.0.4'
+  LCLVersion = '2.2.2.0'
   object C: TButton
     Left = 400
     Height = 50
@@ -144,6 +144,7 @@ object Calculator: TCalculator
     Top = 304
     Width = 50
     Caption = '1'
+    OnClick = oneClick
     TabOrder = 16
   end
   object zero: TButton
@@ -308,6 +309,7 @@ object Calculator: TCalculator
     Top = 192
     Width = 50
     Caption = 'MR'
+    OnClick = memoryrestoreClick
     TabOrder = 35
   end
   object memorystore: TButton
@@ -316,6 +318,7 @@ object Calculator: TCalculator
     Top = 248
     Width = 50
     Caption = 'MS'
+    OnClick = memorystoreClick
     TabOrder = 36
   end
   object memoryplus: TButton
@@ -341,6 +344,7 @@ object Calculator: TCalculator
     Top = 136
     Width = 50
     Caption = 'MC'
+    OnClick = memoryclearClick
     TabOrder = 39
   end
 end

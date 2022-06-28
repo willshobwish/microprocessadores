@@ -38,6 +38,7 @@
         <Filename Value="calculadorapascal.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="Calculator"/>
+        <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="CalculadoraPascal"/>
       </Unit>

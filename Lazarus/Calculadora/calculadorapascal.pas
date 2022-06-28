@@ -55,6 +55,10 @@ type
     visor: TEdit;
     procedure Button21Click(Sender: TObject);
     procedure CClick(Sender: TObject);
+    procedure memoryclearClick(Sender: TObject);
+    procedure memoryrestoreClick(Sender: TObject);
+    procedure memorystoreClick(Sender: TObject);
+    procedure oneClick(Sender: TObject);
     procedure piClick(Sender: TObject);
     procedure plusClick(Sender: TObject);
     procedure threeClick(Sender: TObject);
@@ -62,7 +66,8 @@ type
   private
 
   public
-var memory:Real;
+  var
+    memory, memorystorevar: real;
   end;
 
 var
@@ -81,21 +86,46 @@ end;
 
 procedure TCalculator.CClick(Sender: TObject);
 begin
-  visor.Text:= FloatToStr(0);
+  visor.Text := FloatToStr(0);
+  memory := 0;
+end;
+
+procedure TCalculator.memoryclearClick(Sender: TObject);
+begin
+  memorystorevar := 0;
+end;
+
+procedure TCalculator.memoryrestoreClick(Sender: TObject);
+begin
+  memory := memorystorevar;
+  visor.Text := floattostr(memory);
+end;
+
+procedure TCalculator.memorystoreClick(Sender: TObject);
+begin
+  memorystorevar := memory;
+
+end;
+
+procedure TCalculator.oneClick(Sender: TObject);
+begin
+  visor.Text := visor.Text + '1';
+  memory := strtofloat(visor.Text);
 end;
 
 procedure TCalculator.piClick(Sender: TObject);
-var temp:Real;
+var
+  temp: real;
 begin
 
   {$asmmode intel}
   asm
-  finit
-  fldpi
-  fstp temp
+           FINIT
+           FLDPI
+           FSTP    temp
   end;
-  visor.Text:= FloatToStr(temp);
-  memory:=StrToFloat(visor.Text);
+  visor.Text := FloatToStr(temp);
+  memory := StrToFloat(visor.Text);
 
 end;
 
@@ -115,4 +145,3 @@ begin
 end;
 
 end.
-
