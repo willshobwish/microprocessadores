@@ -7,16 +7,16 @@ object Calculator: TCalculator
   ClientHeight = 444
   ClientWidth = 496
   LCLVersion = '2.2.2.0'
-  object C: TButton
+  object ClearButton: TButton
     Left = 400
     Height = 50
     Top = 80
     Width = 50
-    Caption = 'C'
-    OnClick = CClick
+    Caption = 'Clear'
+    OnClick = ClearButtonClick
     TabOrder = 0
   end
-  object division: TButton
+  object DivisionButton: TButton
     Left = 288
     Height = 50
     Top = 192
@@ -24,7 +24,7 @@ object Calculator: TCalculator
     Caption = '/'
     TabOrder = 1
   end
-  object multiplication: TButton
+  object MultiplicationButton: TButton
     Left = 288
     Height = 50
     Top = 248
@@ -32,7 +32,7 @@ object Calculator: TCalculator
     Caption = '*'
     TabOrder = 2
   end
-  object minus: TButton
+  object MinusButton: TButton
     Left = 288
     Height = 50
     Top = 304
@@ -40,16 +40,16 @@ object Calculator: TCalculator
     Caption = '-'
     TabOrder = 3
   end
-  object plus: TButton
+  object PlusButton: TButton
     Left = 288
     Height = 50
     Top = 360
     Width = 50
     Caption = '+'
-    OnClick = plusClick
+    OnClick = PlusButtonClick
     TabOrder = 4
   end
-  object nine: TButton
+  object NineButton: TButton
     Left = 232
     Height = 50
     Top = 192
@@ -57,7 +57,7 @@ object Calculator: TCalculator
     Caption = '9'
     TabOrder = 5
   end
-  object six: TButton
+  object SixButton: TButton
     Left = 232
     Height = 50
     Top = 248
@@ -65,16 +65,16 @@ object Calculator: TCalculator
     Caption = '6'
     TabOrder = 6
   end
-  object three: TButton
+  object ThreeButton: TButton
     Left = 232
     Height = 50
     Top = 304
     Width = 50
     Caption = '3'
-    OnClick = threeClick
+    OnClick = ThreeButtonClick
     TabOrder = 7
   end
-  object equal: TButton
+  object EqualButton: TButton
     Left = 344
     Height = 50
     Top = 360
@@ -82,15 +82,16 @@ object Calculator: TCalculator
     Caption = '='
     TabOrder = 8
   end
-  object Button11: TButton
-    Left = 232
+  object BackspaceButton: TButton
+    Left = 176
     Height = 50
     Top = 80
     Width = 106
     Caption = 'Backspace'
+    OnClick = BackspaceButtonClick
     TabOrder = 9
   end
-  object eight: TButton
+  object EightButton: TButton
     Left = 176
     Height = 50
     Top = 192
@@ -98,7 +99,7 @@ object Calculator: TCalculator
     Caption = '8'
     TabOrder = 10
   end
-  object five: TButton
+  object FiveButton: TButton
     Left = 176
     Height = 50
     Top = 248
@@ -106,7 +107,7 @@ object Calculator: TCalculator
     Caption = '5'
     TabOrder = 11
   end
-  object two: TButton
+  object TwoButton: TButton
     Left = 176
     Height = 50
     Top = 304
@@ -114,7 +115,7 @@ object Calculator: TCalculator
     Caption = '2'
     TabOrder = 12
   end
-  object point: TButton
+  object PointButton: TButton
     Left = 232
     Height = 50
     Top = 360
@@ -122,7 +123,7 @@ object Calculator: TCalculator
     Caption = '.'
     TabOrder = 13
   end
-  object seven: TButton
+  object SevenButton: TButton
     Left = 120
     Height = 50
     Top = 192
@@ -130,7 +131,7 @@ object Calculator: TCalculator
     Caption = '7'
     TabOrder = 14
   end
-  object four: TButton
+  object FourButton: TButton
     Left = 120
     Height = 50
     Top = 248
@@ -138,16 +139,16 @@ object Calculator: TCalculator
     Caption = '4'
     TabOrder = 15
   end
-  object one: TButton
+  object OneButton: TButton
     Left = 120
     Height = 50
     Top = 304
     Width = 50
     Caption = '1'
-    OnClick = oneClick
+    OnClick = OneButtonClick
     TabOrder = 16
   end
-  object zero: TButton
+  object ZeroButton: TButton
     Left = 120
     Height = 50
     Top = 360
@@ -155,7 +156,7 @@ object Calculator: TCalculator
     Caption = '0'
     TabOrder = 17
   end
-  object visor: TEdit
+  object Visualization: TEdit
     Left = 64
     Height = 23
     Top = 24
@@ -163,7 +164,7 @@ object Calculator: TCalculator
     TabOrder = 18
     Text = '0'
   end
-  object degree: TRadioButton
+  object DegreeRadio: TRadioButton
     Left = 120
     Height = 19
     Top = 56
@@ -173,7 +174,7 @@ object Calculator: TCalculator
     TabOrder = 40
     TabStop = True
   end
-  object radian: TRadioButton
+  object RadianRadio: TRadioButton
     Left = 184
     Height = 19
     Top = 56
@@ -181,16 +182,16 @@ object Calculator: TCalculator
     Caption = 'Radian'
     TabOrder = 19
   end
-  object Button21: TButton
-    Left = 344
+  object ClearEntryButton: TButton
+    Left = 288
     Height = 50
     Top = 80
-    Width = 50
-    Caption = 'CE'
-    OnClick = Button21Click
+    Width = 106
+    Caption = 'Clear Entry'
+    OnClick = ClearEntryButtonClick
     TabOrder = 20
   end
-  object ysqrtx: TButton
+  object YsqrtxButton: TButton
     Left = 344
     Height = 50
     Top = 304
@@ -198,23 +199,23 @@ object Calculator: TCalculator
     Caption = 'ʸ√x'
     TabOrder = 21
   end
-  object tan: TButton
+  object TanButton: TButton
     Left = 344
     Height = 50
     Top = 248
     Width = 50
-    Caption = 'tan'
+    Caption = 'Tan'
     TabOrder = 22
   end
-  object cos: TButton
+  object CosButton: TButton
     Left = 344
     Height = 50
     Top = 192
     Width = 50
-    Caption = 'cos'
+    Caption = 'Cos'
     TabOrder = 23
   end
-  object sqrtx: TButton
+  object SqrtxButton: TButton
     Left = 400
     Height = 50
     Top = 304
@@ -222,7 +223,7 @@ object Calculator: TCalculator
     Caption = '√x'
     TabOrder = 24
   end
-  object x2: TButton
+  object X2Button: TButton
     Left = 400
     Height = 50
     Top = 248
@@ -230,7 +231,7 @@ object Calculator: TCalculator
     Caption = 'x²'
     TabOrder = 25
   end
-  object xy: TButton
+  object XyButton: TButton
     Left = 400
     Height = 50
     Top = 192
@@ -238,7 +239,7 @@ object Calculator: TCalculator
     Caption = 'xʸ'
     TabOrder = 26
   end
-  object ex: TButton
+  object ExButton: TButton
     Left = 400
     Height = 50
     Top = 136
@@ -246,15 +247,15 @@ object Calculator: TCalculator
     Caption = 'eˣ'
     TabOrder = 27
   end
-  object sin: TButton
+  object SinButton: TButton
     Left = 344
     Height = 50
     Top = 136
     Width = 50
-    Caption = 'sin'
+    Caption = 'Sin'
     TabOrder = 28
   end
-  object onex: TButton
+  object OneXButton: TButton
     Left = 288
     Height = 50
     Top = 136
@@ -262,7 +263,7 @@ object Calculator: TCalculator
     Caption = '1/x'
     TabOrder = 29
   end
-  object factorial: TButton
+  object FactorialButton: TButton
     Left = 232
     Height = 50
     Top = 136
@@ -270,7 +271,7 @@ object Calculator: TCalculator
     Caption = 'n!'
     TabOrder = 30
   end
-  object Button32: TButton
+  object LogButton: TButton
     Left = 176
     Height = 50
     Top = 136
@@ -278,7 +279,7 @@ object Calculator: TCalculator
     Caption = 'log'
     TabOrder = 31
   end
-  object Button33: TButton
+  object LnButton: TButton
     Left = 120
     Height = 50
     Top = 136
@@ -286,16 +287,16 @@ object Calculator: TCalculator
     Caption = 'ln'
     TabOrder = 32
   end
-  object inv: TCheckBox
+  object InverseCheck: TCheckBox
     Left = 64
     Height = 19
     Top = 56
     Width = 36
     Caption = 'Inv'
-    OnChange = invChange
+    OnChange = InverseCheckChange
     TabOrder = 33
   end
-  object plusminus: TButton
+  object SignalButton: TButton
     Left = 176
     Height = 50
     Top = 360
@@ -303,25 +304,25 @@ object Calculator: TCalculator
     Caption = '+/-'
     TabOrder = 34
   end
-  object memoryrestore: TButton
+  object MemoryRestoreButton: TButton
     Left = 64
     Height = 50
     Top = 192
     Width = 50
     Caption = 'MR'
-    OnClick = memoryrestoreClick
+    OnClick = MemoryRestoreButtonClick
     TabOrder = 35
   end
-  object memorystore: TButton
+  object MemoryStoreButton: TButton
     Left = 64
     Height = 50
     Top = 248
     Width = 50
     Caption = 'MS'
-    OnClick = memorystoreClick
+    OnClick = MemoryStoreButtonClick
     TabOrder = 36
   end
-  object memoryplus: TButton
+  object MemoryPlusButton: TButton
     Left = 64
     Height = 50
     Top = 304
@@ -329,22 +330,22 @@ object Calculator: TCalculator
     Caption = 'M+'
     TabOrder = 37
   end
-  object pi: TButton
+  object PiButton: TButton
     Left = 64
     Height = 50
     Top = 360
     Width = 50
     Caption = 'π'
-    OnClick = piClick
+    OnClick = PiButtonClick
     TabOrder = 38
   end
-  object memoryclear: TButton
+  object MemoryClearButton: TButton
     Left = 64
     Height = 50
     Top = 136
     Width = 50
     Caption = 'MC'
-    OnClick = memoryclearClick
+    OnClick = MemoryClearButtonClick
     TabOrder = 39
   end
 end
