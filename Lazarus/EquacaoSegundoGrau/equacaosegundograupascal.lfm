@@ -3,7 +3,7 @@ object Form1: TForm1
   Height = 240
   Top = 50
   Width = 421
-  Caption = 'Form1'
+  Caption = 'CalculoSegundoGrau'
   ClientHeight = 240
   ClientWidth = 421
   OnCreate = FormCreate

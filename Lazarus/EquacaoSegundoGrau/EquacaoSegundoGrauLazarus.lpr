@@ -3,23 +3,21 @@ program EquacaoSegundoGrauLazarus;
 {$mode objfpc}{$H+}
 
 uses
-  {$IFDEF UNIX}
+ {$IFDEF UNIX}
   cthreads,
-  {$ENDIF}
-  {$IFDEF HASAMIGA}
+   {$ENDIF} {$IFDEF HASAMIGA}
   athreads,
-  {$ENDIF}
+   {$ENDIF}
   Interfaces, // this includes the LCL widgetset
-  Forms, EquacaoSegundoGrauPascal
-  { you can add units after this };
+  Forms,
+  EquacaoSegundoGrauPascal { you can add units after this };
 
 {$R *.res}
 
 begin
-  RequireDerivedFormResource:=True;
-  Application.Scaled:=True;
+  RequireDerivedFormResource := True;
+  Application.Scaled := True;
   Application.Initialize;
   Application.CreateForm(TForm1, Form1);
   Application.Run;
 end.
-
