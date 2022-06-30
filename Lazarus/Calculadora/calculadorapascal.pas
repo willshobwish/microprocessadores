@@ -64,6 +64,7 @@ type
     procedure ExButtonClick(Sender: TObject);
     procedure FactorialButtonClick(Sender: TObject);
     procedure FiveButtonClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
     procedure FourButtonClick(Sender: TObject);
     procedure LnButtonClick(Sender: TObject);
     procedure LogButtonClick(Sender: TObject);
@@ -89,6 +90,7 @@ type
     procedure ThreeButtonClick(Sender: TObject);
     procedure InverseCheckChange(Sender: TObject);
     procedure TwoButtonClick(Sender: TObject);
+    procedure VisualizationChange(Sender: TObject);
     procedure X2ButtonClick(Sender: TObject);
     procedure XyButtonClick(Sender: TObject);
     procedure YsqrtxButtonClick(Sender: TObject);
@@ -98,6 +100,7 @@ type
   public
   var
     MemoryCalculator, MemoryStore: real;
+    FloatingPoint: boolean;
   end;
 
 var
@@ -108,6 +111,8 @@ implementation
 {$R *.lfm}
 
 { TCalculator }
+
+
 
 procedure TCalculator.ClearEntryButtonClick(Sender: TObject);
 begin
@@ -123,6 +128,7 @@ procedure TCalculator.ClearButtonClick(Sender: TObject);
 begin
   Visualization.Text := FloatToStr(0);
   MemoryCalculator := 0;
+  FloatingPoint := False;
 end;
 
 procedure TCalculator.CosButtonClick(Sender: TObject);
@@ -142,7 +148,7 @@ end;
 
 procedure TCalculator.EightButtonClick(Sender: TObject);
 begin
-   if Visualization.Text = '0' then
+  if Visualization.Text = '0' then
   begin
     Visualization.Text := '';
   end;
@@ -173,6 +179,11 @@ begin
   end;
   Visualization.Text := Visualization.Text + '5';
   MemoryCalculator := strtofloat(Visualization.Text);
+end;
+
+procedure TCalculator.FormCreate(Sender: TObject);
+begin
+
 end;
 
 procedure TCalculator.FourButtonClick(Sender: TObject);
@@ -229,7 +240,7 @@ end;
 
 procedure TCalculator.NineButtonClick(Sender: TObject);
 begin
-   if Visualization.Text = '0' then
+  if Visualization.Text = '0' then
   begin
     Visualization.Text := '';
   end;
@@ -254,16 +265,16 @@ end;
 
 procedure TCalculator.PiButtonClick(Sender: TObject);
 var
-  temp: real;
+  Temp: real;
 begin
 
   {$asmmode intel}
   asm
            FINIT
            FLDPI
-           FSTP    temp
+           FSTP    Temp
   end;
-  Visualization.Text := FloatToStr(temp);
+  Visualization.Text := FloatToStr(Temp);
   MemoryCalculator := StrToFloat(Visualization.Text);
 
 end;
@@ -275,6 +286,12 @@ end;
 
 procedure TCalculator.PointButtonClick(Sender: TObject);
 begin
+  if (FloatingPoint = False) then
+  begin
+    Visualization.Text := Visualization.Text + ',';
+    MemoryCalculator := strtofloat(Visualization.Text);
+    FloatingPoint := True;
+  end;
 
 end;
 
@@ -285,7 +302,7 @@ end;
 
 procedure TCalculator.SevenButtonClick(Sender: TObject);
 begin
-   if Visualization.Text = '0' then
+  if Visualization.Text = '0' then
   begin
     Visualization.Text := '';
   end;
@@ -314,8 +331,19 @@ begin
 end;
 
 procedure TCalculator.SqrtxButtonClick(Sender: TObject);
+var
+  Temp: real;
 begin
-
+  Temp := MemoryCalculator;
+  {$asmmode intel}
+  asm
+           FINIT
+           FLD     Temp
+           FSQRT
+           FSTP    Temp
+  end;
+  MemoryCalculator := Temp;
+  Visualization.Text := floattostr(MemoryCalculator);
 end;
 
 procedure TCalculator.TanButtonClick(Sender: TObject);
@@ -348,6 +376,12 @@ begin
   MemoryCalculator := strtofloat(Visualization.Text);
 end;
 
+procedure TCalculator.VisualizationChange(Sender: TObject);
+begin
+
+end;
+
+
 procedure TCalculator.X2ButtonClick(Sender: TObject);
 begin
 
@@ -372,5 +406,7 @@ begin
   Visualization.Text := Visualization.Text + '0';
   MemoryCalculator := strtofloat(Visualization.Text);
 end;
+
+
 
 end.

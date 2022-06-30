@@ -6,6 +6,7 @@ object Calculator: TCalculator
   Caption = 'Calculator'
   ClientHeight = 443
   ClientWidth = 521
+  OnCreate = FormCreate
   LCLVersion = '2.2.2.0'
   object ClearButton: TButton
     Left = 432
@@ -175,6 +176,7 @@ object Calculator: TCalculator
     Top = 24
     Width = 440
     Alignment = taRightJustify
+    OnChange = VisualizationChange
     TabOrder = 18
     Text = '0'
   end
