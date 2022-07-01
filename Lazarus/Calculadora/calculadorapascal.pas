@@ -53,6 +53,8 @@ type
     DegreeRadio: TRadioButton;
     RadianRadio: TRadioButton;
     Visualization: TEdit;
+    procedure ClearVisualization();
+    procedure ClearOperationFlag();
     procedure BackspaceButtonClick(Sender: TObject);
     procedure ClearEntryButtonClick(Sender: TObject);
     procedure ClearButtonClick(Sender: TObject);
@@ -100,7 +102,7 @@ type
   public
   var
     MemoryCalculator, MemoryStore: real;
-    FloatingPoint: boolean;
+    FloatingPoint, Sum, Subtraction, Division, Multiplication: boolean;
   end;
 
 var
@@ -112,11 +114,22 @@ implementation
 
 { TCalculator }
 
+procedure TCalculator.ClearOperationFlag();
+begin
+  Sum := False;
+  Subtraction := False;
+  Division := False;
+  Multiplication := False;
+end;
 
+procedure TCalculator.ClearVisualization();
+begin
+
+end;
 
 procedure TCalculator.ClearEntryButtonClick(Sender: TObject);
 begin
-
+  ClearOperationFlag();
 end;
 
 procedure TCalculator.BackspaceButtonClick(Sender: TObject);
