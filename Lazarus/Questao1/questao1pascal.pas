@@ -1,4 +1,4 @@
-unit QuestaoL;
+unit Questao1Pascal;
 
 {$mode objfpc}{$H+}
 
@@ -60,6 +60,7 @@ begin
   edit1.Text := floattostr(va);
   edit2.Text := floattostr(vb);
   edit3.Text := floattostr(vc);
+
 end;
 
 end.
